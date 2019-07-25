@@ -37,7 +37,7 @@ class Student
      self.update
   else 
    sql = <<-SQL
-   INSERT INTO students (id, name, grade) VALUES (?, ?, ?);
+   INSERT INTO students (name, grade, id) VALUES (?, ?, ?);
    SQL
    
    DB[:conn].execute(sql, self.name, self.grade)
