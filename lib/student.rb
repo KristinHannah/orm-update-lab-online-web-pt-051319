@@ -1,5 +1,5 @@
 require_relative "../config/environment.rb"
-
+require "pry"
 class Student
   attr_accessor :name, :grade
   attr_reader :id
@@ -71,6 +71,7 @@ class Student
    FROM students
    WHERE name = ?
    SQL
+   
    row = DB[:conn].execute(sql, name)
    self.new_from_db(row)
  end 
